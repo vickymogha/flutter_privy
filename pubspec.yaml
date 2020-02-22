@@ -23,7 +23,6 @@ dependencies:
 
   flutter_page_transition: ^0.1.0
 
-  flutter_qr_bar_scanner: ^1.0.1
 
 
   # The following adds the Cupertino Icons font to your application.

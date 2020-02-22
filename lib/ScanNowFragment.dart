@@ -47,13 +47,6 @@ class _ScanNowState extends State<ScanNowFragment> {
             Expanded(
                 child: Stack(
               children: <Widget>[
-                QRBarScannerCamera(
-                  onError: (context, error) => Text(
-                    error.toString(),
-                    style: TextStyle(color: Colors.red),
-                  ),
-                  qrCodeCallback: (code) {},
-                ),
                 Container(
                   decoration: ShapeDecoration(
                     shape: QrScannerOverlayShapeCustom(),
