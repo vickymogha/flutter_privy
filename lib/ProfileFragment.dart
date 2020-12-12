@@ -4,9 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_gifimage/flutter_gifimage.dart';
 import 'package:privystreet_flutterapp/dashboard.dart';
 
-
 class ProfileFragment extends StatefulWidget {
-
   static const String tag = "profile-page";
 
   @override
@@ -16,9 +14,24 @@ class ProfileFragment extends StatefulWidget {
   }
 }
 
+class ListData {
+  String name;
+  bool isExpaned = false;
+}
+
 class _ProfileState extends State<ProfileFragment> {
+  List<ListData> tiles;
+  int index = -1;
+
   @override
   void initState() {
+    tiles = new List();
+
+    for (int i = 0; i < 100; i++) {
+      ListData data = new ListData();
+      data.name = "vikash";
+      tiles.add(data);
+    }
     super.initState();
   }
 
@@ -29,25 +42,46 @@ class _ProfileState extends State<ProfileFragment> {
 
   @override
   Widget build(BuildContext context) {
-
-
+    print("heello");
 
     return Scaffold(
-
-        body: Column(
-          children: <Widget>[
-            Expanded(
-                child: Padding(
-              padding: EdgeInsets.only(left: 20, right: 20, top: 70),
-              child: Center(
-                child: Column(
-                  children: <Widget>[
-                    Text("Profile")
-                  ],
-                ),
+      body: Container(
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          children: tiles.reversed.map((data) {
+            return Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
               ),
-            )),
-          ],
-        ));
+              child: new ExpansionTile(
+                initiallyExpanded: data.isExpaned,
+                leading: Icon(
+                  Icons.email,
+                  size: 50,
+                ),
+                trailing: data.isExpaned
+                    ? Icon(Icons.arrow_drop_up, size:30):Icon(Icons.arrow_drop_down, size: 30,),
+                subtitle: Text("Vasdkfldskfkdsfkl lskdfjas"),
+                title: Text(data.name),
+                children: <Widget>[
+                  Text("inner"),
+                  Text("inner"),
+                  Text("inner"),
+                  Text("inner"),
+                  Text("inner"),
+                  Text("inner"),
+                ],
+                onExpansionChanged: (bool value) {
+                  setState(() {
+
+                    value ? (data.isExpaned = true) : data.isExpaned = false;
+                  });
+                },
+              ),
+            );
+          }).toList(),
+        ),
+      ),
+    );
   }
 }

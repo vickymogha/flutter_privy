@@ -36,75 +36,81 @@ class _SignInState extends State<SignInScreen> {
 
 
     return Scaffold(
+        body: SingleChildScrollView(
+          child: Container(
 
-        body: Column(
-          children: <Widget>[
-            Container(
-              width: double.infinity,
-              height: 200,
-              color: Colors.green,
-              child: Text("SignInScreen"),
-            ),
-            Expanded(
-                child: Padding(
-              padding: EdgeInsets.only(left: 20, right: 20, top: 70),
-              child: Column(
-                children: <Widget>[
-                  TextField(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  width: double.infinity,
+                  height: 200,
+                  color: Colors.green,
+                  child: Text("SignInScreen"),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 40,
+                    left: 20,
+                    right: 20,
+                  ),
+                  child: TextField(
                     decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.yellow[50],
-                      hintText: "Enter UserName",
-                      border: border,
-                      focusedBorder: border ,
-                      enabledBorder: border,
-                    ),
+                        filled: true,
+                        fillColor: Colors.yellow[50],
+                        border: border,
+                        focusedBorder: border ,
+                        enabledBorder: border,
+                        hintText: "Enter Password"),
                   ),
-                  Padding(
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 20,
+                    left: 20,
+                    right: 20,
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.yellow[50],
+                        border: border,
+                        focusedBorder: border ,
+                        enabledBorder: border,
+                        hintText: "Enter Password"),
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  child: Padding(
                     padding: const EdgeInsets.only(
-                      top: 20,
+                      top: 60,
+                      right: 20,
+                        left:20
                     ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.yellow[50],
-                          border: border,
-                          focusedBorder: border ,
-                          enabledBorder: border,
-                          hintText: "Enter Password"),
-                    ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        top: 60,
-                      ),
-                      child: SizedBox(
-                        height: 50,
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
+                    child: SizedBox(
+                      height: 50,
+                      child: RaisedButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                            BorderRadius.all(Radius.circular(10))),
 
-                          child: Visibility(
-                            visible: true,
-                            child:  Text(
+                        child: Visibility(
+                          visible: true,
+                          child:  Text(
                             "Sign In",
                             style: TextStyle(color: Colors.white),
                           ),
-                          ),
-                          onPressed: () {
-                            Navigator.of(context).pushNamed(DashBoard.tag);
-                          },
                         ),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(DashBoard.tag);
+                        },
                       ),
                     ),
                   ),
-                ],
-              ),
-            )),
-          ],
+                ),
+              ],
+            ),
+          ),
         ));
   }
 }

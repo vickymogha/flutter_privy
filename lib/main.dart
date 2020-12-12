@@ -87,13 +87,13 @@ class _SplashScreenState extends State<SplashScreen>
     Future.delayed(Duration(milliseconds: 2000), () {
       _animationCtrl.repeat(
         min: 0,
-        max: 50,
+        max: 49,
         period: Duration(milliseconds: 4000),
       );
 
       _animationCtrl.addListener(() {
         // print(_animationCtrl.value);
-        if (_animationCtrl.value > 49) {
+        if (_animationCtrl.value >= 48) {
           _animationCtrl.stop();
 
           Navigator.of(context).pushNamed(SignInScreen.tag);
