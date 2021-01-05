@@ -53,7 +53,7 @@ class _SignInState extends State<SignInScreen> {
 
     setState(() {
       _batteryLevel = batteryLevel;
-      _hitLoginService();
+
     });
   }
 
@@ -155,7 +155,8 @@ class _SignInState extends State<SignInScreen> {
                       ),
                     ),
                     onPressed: () {
-                      _getBatteryLevel();
+                     // _getBatteryLevel();
+                      _hitLoginService();
                     },
                   ),
                 ),
