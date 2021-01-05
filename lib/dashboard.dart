@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_gifimage/flutter_gifimage.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:privystreet_flutterapp/History.dart';
 import 'package:privystreet_flutterapp/ProfileFragment.dart';
+import 'package:privystreet_flutterapp/RowColumn.dart';
 import 'package:privystreet_flutterapp/ScanNowFragment.dart';
 
 class DashBoard extends StatefulWidget {
@@ -40,9 +42,9 @@ class _DashBoardState extends State<DashBoard> {
       case 1:
         return ProfileFragment();
       case 2:
-        return Text('History');
+        return HistoryFragment();
       case 3:
-        return Text('History');
+        return ColumnRowFragment();
 
       default:
         return new Text("Error");
