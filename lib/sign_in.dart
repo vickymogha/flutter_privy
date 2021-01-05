@@ -57,6 +57,16 @@ class _SignInState extends State<SignInScreen> {
     });
   }
 
+
+  void delay(int value)
+  {
+    pr.show();
+    Future.delayed(Duration(seconds: value), () {
+      pr.hide();
+      Navigator.of(context).pushNamed(DashBoard.tag);
+    });
+  }
+
   Future<void> _hitLoginService() async {
     var url = 'https://www.googleapis.com/books/v1/volumes?q={http}';
     pr.show();
@@ -157,7 +167,8 @@ class _SignInState extends State<SignInScreen> {
                     ),
                     onPressed: () {
                      // _getBatteryLevel();
-                      _hitLoginService();
+                      //_hitLoginService();
+                      delay(30);
                     },
                   ),
                 ),
