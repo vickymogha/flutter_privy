@@ -76,6 +76,7 @@ class _SignInState extends State<SignInScreen> {
       _scaffoldKey.currentState.showSnackBar(snackBar);
     }
 
+
     //pr.hide();
    // Navigator.of(context).pushNamed(DashBoard.tag);
   }
